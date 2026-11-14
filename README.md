@@ -1,8 +1,6 @@
 # PyBullet Panda 机械臂行为克隆
 
-基于 PyBullet Franka Panda 的三维目标到达任务。脚本专家通过逆运动学生成示范，MLP 从 13 维状态预测 7 维关节角增量，再通过位置控制闭环执行。
-
-项目包含采集、按轨迹划分数据、归一化、训练、模型保存、评估和可视化。`policy.py` 的网络与 forward、`learning.py` 的 train_step 由项目作者实现；其余配套流程和本次仓库整理由助手编写。
+基于 PyBullet Franka Panda 的三维目标到达任务。项目包含采集、按轨迹划分数据、归一化、训练、模型保存、评估和可视化。
 
 ## 仿真效果
 
@@ -117,5 +115,3 @@ NPZ 字段包含 `observations`、`actions`、`next_observations`、`episode_id`
 ├── scripts/                   # 复现、渲染和绘图脚本
 └── requirements*.txt          # 运行与可视化依赖
 ```
-
-模型和原始实验配置保留采集时的路径字段作为来源记录；运行脚本使用上述仓库相对路径。下一步实验为复测两个失败目标、采集偏离状态的专家纠正样本，并使用新的 seed 评估。
